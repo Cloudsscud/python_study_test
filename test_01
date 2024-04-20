@@ -1,1 +1,246 @@
+(1)
+score = eval(input())
+if score>=60:
+    print("合格")
+else :
+    print("不合格")
+score = eval(input())
+if score>=90:
+    print("A")
+elif score>=80:
+    print("B")
+elif score>=70:
+    print("C")
+elif score>=60:
+    print("D")
+else :
+    print("E")
 
+(2)
+while(1):
+    a = float(input("请输入正方体边长:"))
+    if a < 0:
+        print("不能小于0")
+    else:
+        break
+print("正方体表面积为:%.3f"%(6*(a**2)))
+print("正方体体积为:%.3f"%(pow(a,3)))
+
+(3)
+while(1):#判断时间合法性
+    work_time=eval(input("本周的工作时间:"))
+    if(work_time>40 or work_time<0):
+        print("工作时间错误")
+    else:
+        break
+while(1):
+    extra_work_time=eval(input("本周加班时间:"))
+    if(extra_work_time>0):
+        break
+    else:
+        print("时间错误!")
+hour_salary=eval(input("请输入您的时薪:"))
+salary=work_time*hour_salary+3*extra_work_time*hour_salary
+print("您的周常规工作时间为%d小时"%work_time)
+print("您的周加班时间为%d小时"%extra_work_time)
+print("您的时薪为:%.2f元/时"%hour_salary)
+print("您的周工资为:%.2f元"%salary)
+
+(4)
+sum=0
+while(1):
+    x=input("请输入一个数")
+    if(x=='end'):
+        break
+    else:
+        sum = sum + float(x)
+print("各数之和:",sum)
+
+(5)
+s=input("请输入一个字符.当输入#时结束输入操作! >")
+while(s!='#'):
+    print("您输入的字符为：",s)
+    s = input("请输入一个字符.当输入#时结束输入操作! >")
+else:
+    print("输入结束")
+
+(6)
+for num in range(30,50):
+    for i in range(2,num):
+        if(num%i==0):
+            break
+    else:
+        print("%d为素数"%(num))
+
+(7)
+for letter in "hello world!":
+    if(letter=='w'):
+        break
+    print("当前为:",letter)
+
+(8)
+var = 10
+while(1):
+    print("当前变量值为:",var)
+    var = var - 1
+    if(var==5):
+        print("结束")
+        break
+(9)
+for i in range(1,10):
+    if(i%2==0):
+        continue
+    print(i)
+
+(10)
+month = int(input("当月月份为"))
+if (3 <= month <= 5):
+    print("%d月春天" % month)
+elif (6 <= month <= 8):
+    print("%d月夏天" % month)
+elif (9 <= month <= 11):
+    print("%d月秋天" % month)
+elif (month == 12 or 1 <= month <= 2):
+    print("%d月冬天" % month)
+else:
+    print("月份错误")
+
+(11)m=int(input("第一个数字:"))
+n=int(input("第二个数字:"))
+t=0
+while (t := m % n):
+    m = n
+    n = t
+print("%d"%n)
+
+(12)#空心菱形
+row=int(input("输人数字:"))
+for x in range(-row,row+1):#2*row+1行
+    string = " "
+    for y in range(-row,row+1):#2*row+1列
+        if abs(x)+abs(y)==row:
+            string+="*"
+        else:
+            string+=" "
+    print (string)
+
+(13)weight=eval(input("体重为(kg):"))
+height=eval(input("身高为(cm):"))
+bmi=weight/(height**2)
+if(bmi<18.5):
+    print("偏瘦")
+elif(18.5<=bmi<24):
+    print("正常")
+elif(24<=bmi<25):
+    print("偏胖")
+
+(14)
+x=float(input("度数为:"))
+x=x/360*2*3.1415926
+t=1
+sum=1
+n=1
+while abs(t)>1e-7:
+    t=t*(-1)*(x**2)/(2*n*(2*n-1))
+    sum=sum+t
+    n=n+1
+print("值为:",sum)
+
+(15)
+count = 0
+arr = ['a','b','c','d']
+for i in range(0,4):
+    for j in range(0,4):
+        for k in range(0,4):
+            if((i!=j)and(i!=k)and(j!=k)):
+                print(arr[i],arr[j],arr[k])
+                count+=1
+print(count)
+
+(16)
+import math
+for i in range(10,100):
+    for j in range(2,int(math.sqrt(i))+1):
+        if i%j==0:
+            break
+    else:
+        print("%d为素数"%i)
+
+(17)
+for i in range(100,1000):
+    s=str(i)
+    one=int(s[0])
+    len=int(s[1])
+    hun=int(s[2])
+    if i==one**3+len**3+hun**3:
+        print(i)
+
+(18)
+for i in range(100,1000):
+    s=str(i)
+    one=int(s[0])
+    len=int(s[1])
+    hun=int(s[2])
+    if i==one+len**2+hun**3:
+        print(i)
+
+(19)
+grade = int(input("分数:"))
+if(grade>=90):
+    print("A")
+elif(grade>=90):
+    print("A")
+elif(80<=grade<90):
+    print("B")
+elif(70<=grade<80):
+    print("C")
+elif(60<=grade<70):
+    print("D")
+elif(grade<60):
+    print("E")
+
+(20)
+def find_min(x1,x2,x3):
+    if x1>=x2:
+        if x3>x2:
+            return x2
+        else:
+            return x3
+    elif x1<=x2:
+        if x1>x3:
+            return x3
+        else:
+            return x1
+x1=float(input("第一个数"))
+x2=float(input("第二个数"))
+x3=float(input("第三个数"))
+print(find_min(x1,x2,x3))
+
+(21)
+#阶乘
+def fac(x):
+    sum = 0
+    for i in range(0,x):
+        sum += x-i
+    return sum
+
+n=int(input("请输入一个整数"))
+s = 0
+for i in range(0,n):
+    s += fac(n-i)
+print(s)
+
+(22)
+#加数的形式
+def add_num(k,n):
+    num = 0
+    for i in range(0,n):
+        num += k*(10**i)
+    return num
+
+k=eval(input("输入k值"))
+n=eval(input("输入n值"))
+sum = 0
+for i in range(1,n+1):
+    sum += add_num(k,i)
+print(sum)
