@@ -1,0 +1,43 @@
+#4.6
+s = input("请输入:")
+counts = {}
+for char in s:
+    if char in counts:
+        counts[char] += 1
+    else:
+        counts[char] = 1
+Ls = [counts]
+Ls.sort()
+print(Ls)
+
+#4.7
+import random
+s = ["a","b","c","d","e","f","g","1","2","3","4","5","6","7","8","9"]
+Ls = {}
+for i in range(10):
+    Ls[i] = random.choice(s)
+print(Ls)
+
+#4.8
+Ls_score = [90,100,80,90,100,70,65,85,75,84]
+Ls_score.sort()
+Ls_score.pop(0)
+Ls_score.pop(8)
+print(Ls_score)
+ave = 0
+for i in range(8):
+    ave += Ls_score[i]
+print("最终得分为{}".format(ave/8))
+
+#4.9
+import random
+s= set()
+n = int(input("输入:"))
+if 0&lt;n&lt;=1000:
+    while n&gt;0:
+        num = random.randint(0,1000)
+        s.add(num)
+        n-=1
+    print(sorted(list(s)))
+else:
+    print("输入失败")
