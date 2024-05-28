@@ -41,3 +41,14 @@ if 0&lt;n&lt;=1000:
     print(sorted(list(s)))
 else:
     print("输入失败")
+
+#4.10
+import random
+list1 = []
+list2 = []
+for i in range(500):
+    list1.append(random.randint(1,99))
+list2 = set(list1)
+print("升序输出:",sorted(list2))
+for i in list2:
+    print("重复数字%s次数:"%(i),list1.count(i))
